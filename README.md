@@ -1,2 +1,26 @@
-# MyAssignment
-Created two different micro services in spring Boot which are restful web-services. Book Inventory API with HTTP method POST to handle the new entry of Book or update the existing Book information.  Book Details API with HTTP method GET to get the Book. All Data Format will be in JSON.
+# 1.Book-Details
+
+<p><b>Get Book By BookId</b></p>
+		curl -X GET \ http://localhost:8080/book-details/book/200
+
+		Response:
+		{
+			"bookId": 200,
+			"bookName": "Core Java Concept",
+			"bookCategory": "Computer Science Program"
+		}
+		
+# 2.Book-Inventory
+
+<p><b>Create New Book</b></p>
+		curl -d "@data.json" -H "Content-Type: application/json" -X POST http://localhost:8181/book-inventory/book
+
+<p><b>Update Existing Book</b></p>
+		curl -d "@data.json" -H "Content-Type: application/json" -X PUT http://localhost:8181/book-inventory/book
+
+		data.json
+		{
+			"bookId": 400,
+			"bookName": "Database Concept",
+			"bookCategory": "Computer Science Program"
+		}
